@@ -4,3 +4,10 @@ from repositories import country_repository
 import repositories.country_repository as country_repository
 
 country_blueprint = Blueprint("country", __name__)
+
+#GET '/countries'
+
+#SHOW
+#GET '/countries/<id>'
+
+#DELETE 

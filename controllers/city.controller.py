@@ -6,7 +6,7 @@ import repositories.city_repository as city_repository
 city_blueprint = Blueprint("city", __name__)
 
 #INDEX 
-#GET '/cities
+#GET '/cities'
 
 #NEW 
 # GET '/cities/new'
@@ -24,7 +24,7 @@ city_blueprint = Blueprint("city", __name__)
 #GET '/cities/<id>'
 
 
-#DELETE '/CITIES/<id>'
+#DELETE '/cities/<id>'
 
 
 #? UPDATE OR EDIT
