@@ -3,10 +3,14 @@ from models.city import City
 from repositories import city_repository
 import repositories.city_repository as city_repository
 
-city_blueprint = Blueprint("city", __name__)
+cities_blueprint = Blueprint("city", __name__)
 
 #INDEX 
 #GET '/cities'
+@cities_blueprint.route("/cities")
+def cities():
+    cities = city_repository.select_all()
+    return render_template("cities/index.html", all_cities = cities)
 
 #NEW 
 # GET '/cities/new'
