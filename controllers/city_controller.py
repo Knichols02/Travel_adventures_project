@@ -53,4 +53,21 @@ def delete_city(id):
     city_repository.delete(id)
     return redirect("/cities")
 
-#? UPDATE OR EDIT
+#EDIT 
+#GET '/cities<id>/edit'
+@city_blueprint.route("/cities/<id>/edit", methods=["GET"])
+def edit_city(id):
+    city = city_repository.select(id)
+    countries = country_repository.select_all()
+    return render_template("cities/edit.html", city=city, all_countries = countries)
+
+# UPDATE
+# PUT '/cities/<id>'
+@city_blueprint.route("/cities/<id>", methods=['POST'])
+def update_city(id):
+    city_name = request.form["city_name"]
+    date_of_travel = request.form["date_of_travel"]
+    visited = request.form["visited"]
+    city = City(city_name, date_of_travel, visited, id)
+    city_repository.update(city)
+    return redirect("/cities")
