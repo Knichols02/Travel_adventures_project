@@ -28,6 +28,7 @@ def countries():
 #GET '/countries/<id>'
 
 
+
 #DELETE '/countries/<id>'
 @country_blueprint.route("/countries/<id>/delete", methods=['POST'])
 def delete_country(id):
