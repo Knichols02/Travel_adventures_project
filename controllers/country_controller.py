@@ -44,7 +44,7 @@ def edit_country(id):
     return render_template("countries/edit.html", country=country)
 
 #UPDATE "/countries/<id>"
-@country_blueprint.route(/"countries/<id>", methods=["POST"])
+@country_blueprint.route("/countries/<id>", methods=["POST"])
 def update_country(id):
     name = request.form["name"]
     country = Country(name, id)
