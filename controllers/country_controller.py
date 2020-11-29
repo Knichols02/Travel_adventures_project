@@ -7,9 +7,13 @@ country_blueprint = Blueprint("country", __name__)
 
 #INDEX 
 #GET '/countries'
+@country_blueprint.route("/countries")
+def countries():
+    countries = country_repository.select_all()
+    return render_template("countries/index.html", countries = countries)
 
 #NEW 
-# GET '/countries/new'
+# GET '/countries/new' --> show html form to create a new task
 
 #CREATE
 #POST - '/countries'
@@ -25,6 +29,9 @@ country_blueprint = Blueprint("country", __name__)
 
 
 #DELETE '/countries/<id>'
-
+@country_blueprint.route("/countries/<id>/delete", methods=['POST'])
+def delete_country(id):
+    country_repository.delete(id)
+    return redirect('/countries')
 
 #? UPDATE OR EDIT
