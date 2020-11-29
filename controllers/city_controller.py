@@ -30,7 +30,7 @@ def create_city():
     visited = request.form['visited']
 
     #select the country using the repository 
-    country = country_repository.select(country_id)
+    country = country_repository.select(request.form[country_id])
     
     #create a new city
     city = City(city_name, date_of_travel, visited)
@@ -42,7 +42,10 @@ def create_city():
 
 #SHOW
 #GET '/cities/<id>'
-
+@city_blueprint.route("/cities/<id>", methods=["GET"])
+def show_city(id):
+    city = city_repository.select(id)
+    return render_template("/cities/show.html", city = city)
 
 #DELETE '/cities/<id>'
 @city_blueprint.route("/cities/<id>/delete", methods = ['POST'])

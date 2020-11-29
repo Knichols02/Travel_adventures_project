@@ -11,5 +11,5 @@ id SERIAL PRIMARY KEY,
 city_name VARCHAR (255),
 date_of_travel INT,
 visited BOOLEAN, 
-country_id INT REFERENCES country(id)
+country_id INT REFERENCES countries(id)
 );
