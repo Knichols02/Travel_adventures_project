@@ -7,12 +7,24 @@
 
 <section>
     <h3>{{ city.city_name }}</h3>
-    <p>{{ city.date_of_travel }}</p>
+    <p>{% if city.date_of_travel %}
+        {{city.date_of_travel}}
+        {% else %}
+        Yet 
+        {% endif %}
+    </p>
+    <p>{{city.country.name}}</p>
+    <p>{% if city.visited %}
+            visited
+        {% else %}
+        Not visited yet!
+        {% endif %}
+
+    </p>
     <a href="/cities/{{ city.id }}/edit">Edit</a>
     <form action="/cities/{{ city.id }}/delete" method="POST">
         <input type="submit" value="Delete">
     </form>
-    <!-- <a href="/cities/{{ city.id }}">Details</a> -->
 </section>
 
 {% endfor %}

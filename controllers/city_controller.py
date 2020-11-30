@@ -17,7 +17,8 @@ def cities():
 # GET '/cities/new' --> to create a new city 
 @city_blueprint.route("/cities/new", methods= ["GET"])
 def new_city():
-    return render_template ("cities/new.html")
+    countries=country_repository.select_all()
+    return render_template ("cities/new.html", countries=countries)
 
 #CREATE
 #POST - '/cities' --> to handle to post from the new 
@@ -29,7 +30,7 @@ def create_city():
     visited = request.form['visited']
 
     #select the country using the repository 
-    country = country_repository.select(request.form["name"])
+    country = country_repository.select(request.form['country'])
     
     #create a new city
     city = City(city_name, date_of_travel, visited)

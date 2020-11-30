@@ -3,11 +3,34 @@
 {% block content %}
 <h2>Update your Trip</h2>
 
-<form action="/cities/{{city.id}}" methods="POST">
+<form action="/cities/{{ city.id }}" methods="POST">
     <div>
         <label for="city_name">City Name</label>
         <input type="text" id="city_name" name="city_name" value="{{city.city_name">
-        <input type="submit">
+    </div>
+    <div>
+        <label for="country">Country:</label>
+        <select name="country_id" id="country">
+            {% for country in countries%}
+            <option value="{{ country.id}}"
+            {% if country.id == cities.country.id %} selected {% endif %}>{{ country.name }}
+            </option>
+            {% endfor%}
+        </select>
+    </div>
+    <div>
+        <label for="date_of_travel">Date of travel</label>
+        <input type="text" 
+               id="date_of_travel" 
+               name="date_of_travel" 
+               value="{{city.date_of_travel">
+    </div>
+    <div>
+        <label for="visited">Visited this city:</label>
+        <input type="text">
+    </div>
+    <div>
+    <input type="submit">
     </div>
 </form>
 {% endblock %}
