@@ -11,14 +11,13 @@ city_blueprint = Blueprint("city", __name__)
 @city_blueprint.route("/cities")
 def cities():
     cities = city_repository.select_all()
-    return render_template("cities/index.html", all_cities = cities)
+    return render_template("cities/index.html", cities = cities)
 
 #NEW 
 # GET '/cities/new' --> to create a new city 
 @city_blueprint.route("/cities/new", methods= ["GET"])
 def new_city():
-    countries = country_repository.select_all()
-    return render_template ("cities/new.html", all_countries=countries)
+    return render_template ("cities/new.html")
 
 #CREATE
 #POST - '/cities' --> to handle to post from the new 
@@ -30,7 +29,7 @@ def create_city():
     visited = request.form['visited']
 
     #select the country using the repository 
-    country = country_repository.select(request.form[country_id])
+    country = country_repository.select(request.form["name"])
     
     #create a new city
     city = City(city_name, date_of_travel, visited)
@@ -59,7 +58,7 @@ def delete_city(id):
 def edit_city(id):
     city = city_repository.select(id)
     countries = country_repository.select_all()
-    return render_template("cities/edit.html", city=city, all_countries = countries)
+    return render_template("cities/edit.html", city=city, countries = countries)
 
 # UPDATE
 # PUT '/cities/<id>'

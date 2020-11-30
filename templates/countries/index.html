@@ -1,5 +1,15 @@
 {%extends "base.html" %}
 
 {% block content %}
+<h2>Countries</h2>
 
+{% for country in countries %}
+<section>
+    <p>{{country.name}}</p>
+    <a href="/countries/{{ country.id }}/edit">Edit</a>
+    <form action="/countries/{{ country.id }}/delete" methods="POST">
+        <input type="submit" value="Delete">
+    </form>
+</section>
+{% endfor %}
 {% endblock %}

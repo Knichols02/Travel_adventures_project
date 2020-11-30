@@ -28,22 +28,22 @@ country6 = Country('Australia')
 country_repository.save(country6)
 
 
-city1 = City('Rome', 2014, True)
+city1 = City('Rome', country1, 2014, True)
 city_repository.save(city1)
 
-city2 = City('Paris', 2014, True)
+city2 = City('Paris', country2, 2014, True)
 city_repository.save(city2)
 
-city3 = City('Washington D.C.', 2016, True)
+city3 = City('Washington D.C.', country3, 2016, True)
 city_repository.save(city3)
 
-city4 = City('Dubrovnik', 2015, True)
+city4 = City('Dubrovnik', country4, 2015, True)
 city_repository.save(city4)
 
-city5 = City('Budapest', 2014, True)
+city5 = City('Budapest', country5, 2014, True)
 city_repository.save(city5)
 
-city6 = City('Sydney', 0000, False)
+city6 = City('Sydney', country6, 0000, False)
 city_repository.save(city6)
 
 pdb.set_trace()

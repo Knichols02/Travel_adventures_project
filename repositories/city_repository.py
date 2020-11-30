@@ -8,10 +8,12 @@ import repositories.city_repository as city_repository
 
 #CREATE/SAVE  
 def save(city):
-    sql = "INSERT INTO cities (city_name, date_of_travel, visited) VALUES (%s, %s, %s) RETURNING id"
-    values = [city.city_name.id, city.date_of_travel.id, city.visited.id]
+    sql = "INSERT INTO cities (city_name, country_id, date_of_travel, visited) VALUES (%s, %s, %s, %s) RETURNING id"
+    values = [city.city_name, city.country.id, city.date_of_travel, city.visited]
     results = run_sql(sql, values)
-    city.id = results[0]['id']
+    #import pdb; pdb.set_trace()
+    id = results[0]['id']
+    city.id = id
     return city 
 
 #READ - SELECT ALL 
@@ -22,8 +24,8 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        # country = country_repository.select(row['countries_id'])
-        city = City(row['city_name'], row['date_of_travel'], row['visited'], row['id'])
+        country = country_repository.select(row['country_id'])
+        city = City(row['city_name'], row['date_of_travel'], row['visited'], country, row['id'])
         cities.append(city)
     return cities
 
@@ -35,8 +37,8 @@ def select(id):
     result = run_sql(sql, values) [0]
 
     if result is not None:
-        # country = country_repository.select(result['countries_id]'])
-        city = City(result['city_name'], result['date_of_travel'], result['visited'], result['id'])
+        country = country_repository.select(result['country_id]'])
+        city = City(result['city_name'], result['date_of_travel'], result['visited'], country, result['id'])
     return city 
 
 #DELETE - DELETE ALL 
