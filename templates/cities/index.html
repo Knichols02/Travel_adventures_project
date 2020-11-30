@@ -1,26 +1,31 @@
 {%extends "base.html" %}
 
 {% block content %}
-<h2>Trips</h2>
+<h2>Wherever you go becomes a part of you, where have your travels taken you?</h2>
 
 {% for city in cities %}
 
-<section>
-    <h3>{{ city.city_name }}</h3>
-    <p>{% if city.date_of_travel %}
-        {{city.date_of_travel}}
-        {% else %}
-        Yet 
-        {% endif %}
-    </p>
-    <p>{{city.country.name}}</p>
-    <p>{% if city.visited %}
-            visited
-        {% else %}
-        Not visited yet!
-        {% endif %}
-
-    </p>
+<section class=trips>
+    <div><h4> {{ city.city_name }} </h4></div>
+    <div>
+        <p>{% if city.date_of_travel %}
+                
+            {% else %}
+             
+            {% endif %}
+        </p>
+    </div>
+    <div>
+        <p>{{city.country.name}}</p>
+    </div>
+    <div>
+        <p>{% if city.visited %}
+                Visited on {{city.date_of_travel}}
+            {% else %}
+                Not visited yet, adventure awaits!
+            {% endif %}
+        </p>
+    </div>
     <a href="/cities/{{ city.id }}/edit">Edit</a>
     <form action="/cities/{{ city.id }}/delete" method="POST">
         <input type="submit" value="Delete">
