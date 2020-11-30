@@ -1,5 +1,64 @@
 {%extends "base.html" %}
 
 {% block content %}
+<h2>Add a New Trip</h2>
 
+<!-- <form action="/cities" method="POST">
+    <div>
+        <label for="city_name">Name of city:</label>
+        <input type="text" id="city_name" name="city_name">
+    </div>
+    <div>
+        <label for="zombie-type">Zombie Type:</label>
+        <select name="zombie_type_id" id="zombie-type">
+            {% for zombie_type in zombie_types %}
+            <option value="{{ zombie_type.id }}">
+                {{ zombie_type.name }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form> -->
+
+<!-- form -->
+<form action="/cities" method = "post">
+    <div>
+        <label for="city_name">City Name:</label>
+        <input type="text" 
+                name = "city_name" 
+                id="city_name" 
+                placeholder="city_name" 
+                required 
+                autofocus>
+    </div>
+    <div>
+        <label for="date_of_travel">Year of Trip:</label>
+        <input type="number"
+                name="date of travel" 
+                id="date of travel"
+                placeholder="Date of Travel"
+                required>
+    </div>
+    <div>
+        <label for="visited">Visited:</label>
+        <select name="visited" id="visited">
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </select>
+    </div>
+    <div>
+        <label for="country">Country:</label>
+        <select name="country_id" id="country">
+            {% for country in all_countries %}
+                <option value="{{country.id}}">{{country.name}}</option>              
+            {% endfor %}
+        </select>
+
+    </div>
+    <button type="submit">Add Trip</button>
+    
+</form>
 {% endblock %}
