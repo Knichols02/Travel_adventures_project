@@ -7,25 +7,25 @@
 
 <section class=trips>
     <div><h4> {{ city.city_name }} </h4></div>
-    <div>
+    <!-- <div> -->
         <p>{% if city.date_of_travel %}
                 
             {% else %}
              
             {% endif %}
         </p>
-    </div>
-    <div>
+    <!-- </div> -->
+    <!-- <div> -->
         <p>{{city.country.name}}</p>
-    </div>
-    <div>
+    <!-- </div> -->
+    <!-- <div> -->
         <p>{% if city.visited %}
                 Visited on {{city.date_of_travel}}
             {% else %}
                 Not visited yet, adventure awaits!
             {% endif %}
         </p>
-    </div>
+    <!-- </div> -->
     <a href="/cities/{{ city.id }}/edit">Edit</a>
     <form action="/cities/{{ city.id }}/delete" method="POST">
         <input type="submit" value="Delete">
