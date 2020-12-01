@@ -57,3 +57,15 @@ def update(city):
     sql = "UPDATE cities SET (city_name, date_of_travel, visited) = (%s, %s, %s) WHERE id = %s"
     values = [city.city_name, city.date_of_travel, city.visited]
     run_sql(sql, values)
+
+
+def select_all_unvisited():
+    sql = "SELECT * FROM cities WHERE visited = 'f'"
+    results = run_sql(sql)
+    cities =[]
+
+    for row in results:
+        country = country_repository.select(row['country_id'])
+        city = City(row['city_name'], country, row['date_of_travel'], row['visited'], row['id'])
+        cities.append(city)
+    return cities

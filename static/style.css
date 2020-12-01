@@ -7,7 +7,7 @@ background-repeat: no-repeat;
 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-body > header > h1 {
+ h1, h2, h3 {
     text-align: center;
 }
 
@@ -16,9 +16,7 @@ body > header > h1 {
     flex-direction: row;
 }
 
-.trips{
-}
+/* .trips{
+} */
 
-h2 {
-    text-align: center;
-}
+

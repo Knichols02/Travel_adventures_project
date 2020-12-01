@@ -11,7 +11,7 @@ city_blueprint = Blueprint("city", __name__)
 @city_blueprint.route("/cities")
 def cities():
     cities = city_repository.select_all()
-    return render_template("cities/index.html", cities = cities)
+    return render_template("cities/index.html", cities = cities, title = 'Wherever you go becomes a part of you, where have your travels taken you?')
 
 #NEW 
 # GET '/cities/new' --> to create a new city 
@@ -24,8 +24,8 @@ def new_city():
 # #GET '/cities/future'
 @city_blueprint.route("/cities/future", methods= ["GET"])
 def future_trip():
-    cities = city_repository.select_all()
-    return render_template("/cities/future.html", cities = cities)
+    cities = city_repository.select_all_unvisited()
+    return render_template("/cities/index.html", cities = cities, title = 'My Bucket List')
 
 #CREATE
 #POST - '/cities' --> to handle to post from the new 
@@ -34,13 +34,13 @@ def create_city():
     #data from form 
     city_name = request.form['city_name']
     date_of_travel = request.form['date_of_travel']
-    visited = request.form['visited']
+    visited = request.form['visited'] == 'true'
 
     #select the country using the repository 
-    country = country_repository.select(request.form['country'])
+    country = country_repository.select(request.form['country_id'])
     
-    #create a new city
-    city = City(city_name, date_of_travel, visited)
+    #create a new cityc
+    city = City(city_name, country, date_of_travel, visited)
 
     #save the city back to the database with the save method
     city_repository.save(city)
@@ -48,8 +48,6 @@ def create_city():
         return redirect("/cities")
     else:
         return redirect("/cities/future")
-
-
 
 #SHOW
 #GET '/cities/<id>'
