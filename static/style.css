@@ -1,6 +1,6 @@
 /* id for single elements, class for multiple */
 body {
-background-image: url(https://images.unsplash.com/photo-1588025632102-aa7acd130f5f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OTV8fHBpbmslMjAlMjBza2llc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60);
+background-image: url(https://images.unsplash.com/photo-1588025632102-aa7acd130f5f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OTV8fHBpbmslMjAlMjBza2llc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=20);
 
 background-size: cover;
 background-repeat: no-repeat;
@@ -16,6 +16,19 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
     flex-direction: row;
 }
 
+.form {
+    text-align: center;
+    
+}
+.countries {
+    display: flex;
+    flex-flow: row wrap;
+
+}
+
+.image {
+    text-align: center;
+}
 /* .trips{
 } */
 

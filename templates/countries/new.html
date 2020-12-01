@@ -2,7 +2,8 @@
 
 {% block content %}
 <h2>Add a new Country</h2>
-
+<br>
+<section class='form'>
 <form action="/countries" method="POST">
     <div>
         <label for="name">Country name:</label>
@@ -12,4 +13,5 @@
         <input type="submit">
     </div>
 </form>
+</section>
 {% endblock %}

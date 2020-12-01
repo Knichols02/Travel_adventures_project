@@ -2,9 +2,10 @@
 
 {% block content %}
 <h2>Countries</h2>
+<br>
 
 {% for country in countries %}
-<section>
+<section class=countries>
     <p>{{country.name}}</p>
     <a href="/countries/{{ country.id }}/edit">Edit</a>
     <form action="/countries/{{country.id}}/delete" method="POST">
