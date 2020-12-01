@@ -1,7 +1,6 @@
 /* id for single elements, class for multiple */
 body {
 background-image: url(https://images.unsplash.com/photo-1588025632102-aa7acd130f5f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OTV8fHBpbmslMjAlMjBza2llc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=20);
-
 background-size: cover;
 background-repeat: no-repeat;
 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -17,17 +16,23 @@ h1 {
 h2, h3, h5 {
     text-align: center;
     color: rgb(61, 65, 69);
+    font-family: 'Oxygen', sans-serif;
  }
-  h6 {
+
+h6 {
     text-align: center;
     color: slategrey;
+    font-family: 'Oxygen', sans-serif;
 }
+
 a, a:link, a:visited {
-color: rgb(138, 111, 143);
+    color: rgb(120, 94, 124);
+    font-family: 'Oxygen', sans-serif;
 }
 
 a:hover, a:active {
-color: rgb(245, 167, 227);
+    color: rgb(245, 167, 227);
+    font-family: 'Oxygen', sans-serif;
 }
 
 button {
@@ -35,6 +40,7 @@ button {
     color: rgb(106, 111, 117);
     box-shadow: 2px 5px 5px rgb(106, 111, 117);
 }
+
 #add {
     background-color: rgb(230, 213, 227);
     color: rgb(106, 111, 117);
@@ -42,12 +48,26 @@ button {
 }
 
 .countries {
+    font-family: 'Oxygen', sans-serif;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    flex-flow: wrap;
+    justify-content: center;
+    align-content: space-between;
+}
+.trips {
+    font-family: 'Oxygen', sans-serif;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: wrap;
+    justify-content: center;
+    align-content: space-around; 
 }
 
 .form {
+    font-family: 'Oxygen', sans-serif;
     text-align: center;  
 }
 
@@ -55,19 +75,15 @@ button {
     text-align: center;
 }
 
-
-header {
-    
-}
-
 #homeMenu {
+    font-family: 'Oxygen', sans-serif;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-}
-
-#main-content {
     
+}
+#main-content{
+    font-family: 'Oxygen', sans-serif;
 }
 
  footer {
@@ -76,10 +92,3 @@ header {
     width: 100%;
     height: 2.5rem; 
 }
-
-/* .trips{
-} */
-
-/* .home {}
-
-

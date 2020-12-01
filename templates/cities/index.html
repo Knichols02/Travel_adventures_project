@@ -7,12 +7,10 @@
 {% for city in cities %}
 
 <section class=trips>
-    <h4> {{ city.city_name }} </h4>
-    
-    <p>{{city.country.name}}</p>
+    <p> <b><i> {{ city.city_name }}</i></b>, {{city.country.name}} </p>
    
     <p>{% if city.visited %}
-            Visited on {{city.date_of_travel}}
+            Visited in {{city.date_of_travel}}
         {% else %}
             Not visited yet, adventure awaits!
         {% endif %}
@@ -20,7 +18,7 @@
    
     <a href="/cities/{{ city.id }}/edit">Edit</a>
     <form action="/cities/{{ city.id }}/delete" method="POST">
-        <button type="submit">Delete</button>
+        <button type="submit">Remove</button>
     </form>
 </section>
 
