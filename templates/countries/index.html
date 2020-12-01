@@ -6,11 +6,20 @@
 
 {% for country in countries %}
 <section class=countries>
-    <p>{{country.name}}</p>
-    <a href="/countries/{{ country.id }}/edit">Edit</a>
-    <form action="/countries/{{country.id}}/delete" method="POST">
-        <button type="submit">Delete</button>
-    </form>
+    <div>
+        <p>{{country.name}}</p>
+    </div>
+    <div>
+        <a href="/countries/{{ country.id }}/edit">Edit</a>
+    </div>
+    <div>
+        <form action="/countries/{{country.id}}/delete" method="POST">
+            <button type="submit">Delete</button>
+        </form>
+    </div>
 </section>
+
 {% endfor %}
 {% endblock %}
+<footer>
+</footer>

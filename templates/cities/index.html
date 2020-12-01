@@ -20,9 +20,11 @@
    
     <a href="/cities/{{ city.id }}/edit">Edit</a>
     <form action="/cities/{{ city.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
+        <button type="submit">Delete</button>
     </form>
 </section>
 
 {% endfor %}
 {% endblock %}
+<footer>
+</footer>
