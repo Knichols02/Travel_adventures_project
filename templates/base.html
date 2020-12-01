@@ -8,36 +8,40 @@
     <title>My Travel Adventures</title>
 </head>
 <body>
-    <header>
-        <h1>My Travel Adventures 🗺👣</h1>
-    </header>
-    <main>
-        <nav class="home">
-            <ul>
-                <li><a href="/">Home Page</a></li>
-                <li>
-                    Countries
-                    <ul>
+    <div id="grid-container">
+        <header>
+            <h1>My Travel Adventures 🗺👣</h1>
+        </header>
+        <section>
+            <nav id="menu">
+                <ul>
+                    <li><a href="/">Home Page</a></li>
+                    <li>
+                        Countries
+                <ul>
                         <li><a href="/countries">Countries Visited</a></li>
                         <li><a href="/countries/new">Update Countries</a></li>
-                    </ul>
-                </li>
-                <li>
-                    My Adventures
-                    <ul>
+                </ul>
+                    </li>
+                    <li>
+                        My Adventures
+                <ul>
                         <li><a href="/cities">Reminisce </a></li>
                         <li><a href="/cities/new">Add a new trip</a></li>
                         <li><a href="/cities/future">My Bucket List </a></li>
 
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </main>
-
-    <div>
+                </ul>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    <main id="main-content">
         {% block content %}
         {% endblock %}
-    </div>
+    </main>
+    <footer>
+        <h6>Created by Kirsten Nicholson</h6>
+    </footer>
+</div>
 </body>
 </html>
