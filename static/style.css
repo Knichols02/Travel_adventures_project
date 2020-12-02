@@ -98,7 +98,10 @@ section.travels > p {
     font-family: 'Oxygen', sans-serif;
 }
 
- footer {
+#edit {
+    text-align: center;
+}
+footer {
     position: inherit;
     bottom: 0;
     width: 100%;

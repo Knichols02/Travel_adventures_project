@@ -4,7 +4,17 @@
 <h2>Update Country</h2>
 
 <form action="/countries/{{ country.id }}" method="POST">
-    <div>
+    <!-- <div>
+        <label for="name">Update name of Country:</label>
+        <input name="name" id="name">
+            {% for country in countries%}
+            <option value="{{ country.name }}"
+            {% if country.name == country.country.name %} selected {% endif %}>{{ country.name }}
+            </option>
+            {% endfor%}
+        </input>   
+    </div> -->
+    <div id=edit>
         <label for="name">Name of country:</label>
         <input type="text"
                id="name"
