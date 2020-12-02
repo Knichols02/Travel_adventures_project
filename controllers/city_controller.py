@@ -54,7 +54,7 @@ def create_city():
 @city_blueprint.route("/cities/<id>", methods=["GET"])
 def show_city(id):
     city = city_repository.select(id)
-    return render_template("/cities/index.html", city = city)
+    return render_template("/cities/show.html", city = city)
 
 #DELETE '/cities/<id>'
 @city_blueprint.route("/cities/<id>/delete", methods = ['POST'])
