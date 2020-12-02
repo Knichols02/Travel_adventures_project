@@ -49,7 +49,5 @@ city_repository.save(city4)
 city5 = City('Budapest', country5, 2014, True)
 city_repository.save(city5)
 
-city6 = City('Sydney', country6, 0000, False)
-city_repository.save(city6)
 
 pdb.set_trace()

@@ -34,8 +34,8 @@ def delete_country(id):
     return redirect('/countries')
 
 #EDIT
-#GET '/cities<id>/edit'
-@country_blueprint.route("/countries/<id>/edit", methods=["GET"])
+#GET '/countries<id>/edit'
+@country_blueprint.route("/countries/<id>/edit")
 def edit_country(id):
     country = country_repository.select(id)
     return render_template("countries/edit.html", country=country)

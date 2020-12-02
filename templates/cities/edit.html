@@ -6,14 +6,14 @@
 <form action="/cities/{{ city.id }}" methods="POST">
     <div>
         <label for="city_name">City Name</label>
-        <input type="text" id="city_name" name="city_name" value="{{city.city_name">
+        <input type="text" id="city_name" name="city_name" value="{{city.city_name}}">
     </div>
     <div>
-        <label for="country">Country:</label>
-        <select name="country_id" id="country">
+        <label for="country_id">Country:</label>
+        <select name="country_id" id="country_id">
             {% for country in countries%}
-            <option value="{{ country.id}}"
-            {% if country.id == cities.country.id %} selected {% endif %}>{{ country.name }}
+            <option value="{{ country.id }}"
+            {% if country.id == country.country_id %} selected {% endif %}>{{ country.name }}
             </option>
             {% endfor%}
         </select>
@@ -23,7 +23,7 @@
         <input type="text" 
                id="date_of_travel" 
                name="date_of_travel" 
-               value="{{city.date_of_travel">
+               value="{{city.date_of_travel}}">
     </div>
     <div>
         <label for="visited">Visited this city:</label>

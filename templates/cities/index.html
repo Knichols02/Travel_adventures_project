@@ -7,7 +7,9 @@
 <section class='travels'>
     {% for city in cities %}
     <div>
-    <p> <b><i> {{ city.city_name }}</i></b>, {{city.country.name}} </p>
+        <img src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDd8fHRyYXZlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=120&q=25" alt="">
+        
+    <h4> <b><i> {{ city.city_name }}</i></b>, {{city.country.name}} </h4>
    
     <p>{% if city.visited %}
             Visited in {{city.date_of_travel}}
