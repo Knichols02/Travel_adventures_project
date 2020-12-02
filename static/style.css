@@ -48,23 +48,19 @@ button {
     box-shadow: 2px 5px 5px rgb(106, 111, 117);
 }
 
-.countries {
+.travels {
     font-family: 'Oxygen', sans-serif;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    flex-flow: wrap;
     justify-content: center;
-    align-content: space-between;
+    align-content: center;
+    margin: 0px 10px;
 }
-.trips {
-    font-family: 'Oxygen', sans-serif;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex-flow: wrap;
-    justify-content: center;
-    align-content: space-around; 
+
+section.travels > div {
+    margin: 10px 20px;
+    padding: 10px;
 }
 
 .form {

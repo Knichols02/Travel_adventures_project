@@ -4,22 +4,25 @@
 <h2>Countries</h2>
 <br>
 
-{% for country in countries %}
-<section class=countries>
+
+<section class='travels'>
+    {% for country in countries %}
     <div>
         <p>{{country.name}}</p>
-    </div>
-    <div>
+    
         <a href="/countries/{{ country.id }}/edit">Edit</a>
-    </div>
-    <div>
+
         <form action="/countries/{{country.id}}/delete" method="POST">
             <button type="submit">Remove</button>
         </form>
     </div>
+    {% endfor %}
 </section>
+    <div>
+        <img src="" alt="">
+    </div>
 
-{% endfor %}
+
 {% endblock %}
 <footer>
 </footer>

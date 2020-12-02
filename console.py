@@ -27,6 +27,12 @@ country_repository.save(country5)
 country6 = Country('Australia')
 country_repository.save(country6)
 
+country7 = Country('England')
+country_repository.save(country7)
+
+country8 = Country('Costa Rica')
+country_repository.save(country8)
+
 
 city1 = City('Rome', country1, 2014, True)
 city_repository.save(city1)

@@ -4,15 +4,15 @@
 <h2>{{ title }}</h2>
 <br>
 
-{% for city in cities %}
-
-<section class=trips>
+<section class='travels'>
+    {% for city in cities %}
+    <div>
     <p> <b><i> {{ city.city_name }}</i></b>, {{city.country.name}} </p>
    
     <p>{% if city.visited %}
             Visited in {{city.date_of_travel}}
         {% else %}
-            Not visited yet, adventure awaits!
+            Adventure awaits!
         {% endif %}
     </p>
    
@@ -20,9 +20,11 @@
     <form action="/cities/{{ city.id }}/delete" method="POST">
         <button type="submit">Remove</button>
     </form>
+    </div>
+    {% endfor %}
 </section>
 
-{% endfor %}
+
 {% endblock %}
 <footer>
 </footer>
