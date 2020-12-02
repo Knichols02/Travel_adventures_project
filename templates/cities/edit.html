@@ -27,10 +27,11 @@
     </div>
     <div>
         <label for="visited">Visited this city:</label>
-        <input type="text">
+        <select name="visited" id="visited">
+            <option value="true">Yes</option>
+            <option value="false">Not yet!</option>
+        </select>
     </div>
-    <div>
-    <input type="submit">
-    </div>
+    <button type="submit">Add Trip</button>
 </form>
 {% endblock %}
